@@ -1,0 +1,12 @@
+trigger:
+  branches:
+   include:
+     - main 
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*Tests.Unit*.csproj'
